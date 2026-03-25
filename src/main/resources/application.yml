@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: JudgeAI
+  profiles:
+    active: dev
+  # session
+  session:
+    store-type: redis
+    # session 30 Day
+    timeout: 2592000
+
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        max-age: 2592000
+
+
+# springdoc-openapi
+springdoc:
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.zzw.judgeai.controller
+# knife4j
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
+
