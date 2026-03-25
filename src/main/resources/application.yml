@@ -1,6 +1,6 @@
 spring:
   application:
-    name: JudgeAI
+    name: JudgeAI-backend
   profiles:
     active: dev
   # session

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zzw</groupId>
-    <artifactId>JudgeAI</artifactId>
+    <artifactId>JudgeAI-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>JudgeAI</name>
-    <description>JudgeAI</description>
+    <name>JudgeAI-backend</name>
+    <description>JudgeAI-backend</description>
     <url/>
     <licenses>
         <license/>
