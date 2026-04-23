@@ -11,10 +11,20 @@
         </processorPath>
         <module name="JudgeAI-backend" />
       </profile>
+      <profile name="Annotation profile for JudgeAI" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../apache-maven-3.6.3/mvn_resp/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
+        </processorPath>
+        <module name="JudgeAI" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="JudgeAI" options="-parameters" />
       <module name="JudgeAI-backend" options="-parameters" />
     </option>
   </component>

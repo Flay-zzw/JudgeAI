@@ -14,8 +14,10 @@ import com.zzw.judgeai.model.entity.User;
 
 import com.zzw.judgeai.model.vo.LoginUserVO;
 import com.zzw.judgeai.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,7 +40,7 @@ public class UserController {
      * @param user 用户
      * @return {@code true} 保存成功，{@code false} 保存失败
      */
-    @PostMapping("save")
+    @PostMapping("/save")
     public boolean save(@RequestBody User user) {
         return userService.save(user);
     }
@@ -49,7 +51,7 @@ public class UserController {
      * @param id 主键
      * @return {@code true} 删除成功，{@code false} 删除失败
      */
-    @DeleteMapping("remove/{id}")
+    @DeleteMapping("/remove/{id}")
     public boolean remove(@PathVariable Long id) {
         return userService.removeById(id);
     }
@@ -60,7 +62,7 @@ public class UserController {
      * @param user 用户
      * @return {@code true} 更新成功，{@code false} 更新失败
      */
-    @PutMapping("update")
+    @PutMapping("/update")
     public boolean update(@RequestBody User user) {
         return userService.updateById(user);
     }
@@ -70,7 +72,7 @@ public class UserController {
      *
      * @return 所有数据
      */
-    @GetMapping("list")
+    @GetMapping("/list")
     public List<User> list() {
         return userService.list();
     }
@@ -81,7 +83,7 @@ public class UserController {
      * @param id 用户主键
      * @return 用户详情
      */
-    @GetMapping("getInfo/{id}")
+    @GetMapping("/getInfo/{id}")
     public User getInfo(@PathVariable Long id) {
         return userService.getById(id);
     }
@@ -92,7 +94,7 @@ public class UserController {
      * @param page 分页对象
      * @return 分页对象
      */
-    @GetMapping("page")
+    @GetMapping("/page")
     public Page<User> page(Page<User> page) {
         return userService.page(page);
     }
